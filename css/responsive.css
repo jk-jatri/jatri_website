@@ -49,9 +49,7 @@
     .contact_us_head {
         height: 125px;
     }
-    .demo_head {
-        margin-top: -15%;
-    }
+
     .slider_info h1 {
         line-height: 22px;
     }
@@ -213,9 +211,6 @@
     }
     .contact_us_head {
         height: 135px;
-    }
-    .demo_head {
-        margin-top: -15%;
     }
     .service_card {
         background: #fff;
