@@ -884,3 +884,28 @@ button:not(:disabled) {
     background-color: #FF6347;
     color: #fff;
 }
+
+/* ================ terms and conditions and privacy policy =================*/
+
+.corporate_color {
+    color: #FF6347 !important;
+}
+
+.conditions ul li.corporate_color{
+    font-size: 16px;
+    font-weight:600;
+}
+
+.nested_ul li{
+    list-style-type: square;
+}
+
+.conditions ul li{
+    line-height: 30px;
+    color: #000;
+    text-align: justify;
+}
+
+.bold_list{
+    font-weight: bold;
+}
