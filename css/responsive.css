@@ -158,6 +158,12 @@
     .job_title ul {
         padding-right: 10px;
     }
+        
+    .press_logo{
+        width: 35%;
+        margin: 10px auto;
+        display: block;
+    }
 }
 
 
@@ -285,6 +291,12 @@
     }
     .description_category h4 {
         font-weight: bold;
+    }
+    
+    .press_logo{
+        width: 50%;
+        margin: 15px auto;
+        display: block;
     }
 }
 
