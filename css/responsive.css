@@ -164,6 +164,14 @@
         margin: 10px auto;
         display: block;
     }
+    .dropdown-container .dropdown-toggle {
+        font-size: 17px;
+        padding: 1px 0px !important;
+        margin: 5px 0px !important;
+    }
+    .dropdown-menu::before {
+        top: 41px !important;
+    }
 }
 
 
