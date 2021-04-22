@@ -230,6 +230,19 @@ body {
 }
 
 
+/* Press part Strat */
+
+.press_area {
+    background-color: #F7F7F7;
+}
+
+.press_logo{
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
+
+
 /* Demo part start */
 
 .demo_head {

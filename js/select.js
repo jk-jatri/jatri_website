@@ -1,35 +1,83 @@
-$(".custom-select").each(function() {
-    var classes = $(this).attr("class"),
-        id = $(this).attr("id"),
-        name = $(this).attr("name");
-    var template = '<div class="' + classes + '">';
-    template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-    template += '<div class="custom-options">';
-    $(this).find("option").each(function() {
-        template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-    });
-    template += '</div></div>';
+// Get all the dropdown from document
+document.querySelectorAll('.dropdown-toggle').forEach(dropDownFunc);
 
-    $(this).wrap('<div class="custom-select-wrapper"></div>');
-    $(this).hide();
-    $(this).after(template);
+// Dropdown Open and Close function
+function dropDownFunc(dropDown) {
+    console.log(dropDown.classList.contains('click-dropdown'));
+
+    if(dropDown.classList.contains('click-dropdown') === true){
+        dropDown.addEventListener('click', function (e) {
+            e.preventDefault();        
+    
+            if (this.nextElementSibling.classList.contains('dropdown-active') === true) {
+                // Close the clicked dropdown
+                this.parentElement.classList.remove('dropdown-open');
+                this.nextElementSibling.classList.remove('dropdown-active');
+    
+            } else {
+                // Close the opend dropdown
+                closeDropdown();
+    
+                // add the open and active class(Opening the DropDown)
+                this.parentElement.classList.add('dropdown-open');
+                this.nextElementSibling.classList.add('dropdown-active');
+            }
+        });
+    }
+
+    if(dropDown.classList.contains('hover-dropdown') === true){
+
+        dropDown.onmouseover  =  dropDown.onmouseout = dropdownHover;
+
+        function dropdownHover(e){
+            if(e.type == 'mouseover'){
+                // Close the opend dropdown
+                closeDropdown();
+
+                // add the open and active class(Opening the DropDown)
+                this.parentElement.classList.add('dropdown-open');
+                this.nextElementSibling.classList.add('dropdown-active');
+                
+            }
+
+            // if(e.type == 'mouseout'){
+            //     // close the dropdown after user leave the list
+            //     e.target.nextElementSibling.onmouseleave = closeDropdown;
+            // }
+        }
+    }
+
+};
+
+
+// Listen to the doc click
+window.addEventListener('click', function (e) {
+
+    // Close the menu if click happen outside menu
+    if (e.target.closest('.dropdown-container') === null) {
+        // Close the opend dropdown
+        closeDropdown();
+    }
+
 });
-$(".custom-option:first-of-type").hover(function() {
-    $(this).parents(".custom-options").addClass("option-hover");
-}, function() {
-    $(this).parents(".custom-options").removeClass("option-hover");
-});
-$(".custom-select-trigger").on("click", function() {
-    $('html').one('click', function() {
-        $(".custom-select").removeClass("opened");
+
+
+// Close the openend Dropdowns
+function closeDropdown() { 
+    console.log('run');
+    
+    // remove the open and active class from other opened Dropdown (Closing the opend DropDown)
+    document.querySelectorAll('.dropdown-container').forEach(function (container) { 
+        container.classList.remove('dropdown-open')
     });
-    $(this).parents(".custom-select").toggleClass("opened");
-    event.stopPropagation();
-});
-$(".custom-option").on("click", function() {
-    $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
-    $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-    $(this).addClass("selection");
-    $(this).parents(".custom-select").removeClass("opened");
-    $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+
+    document.querySelectorAll('.dropdown-menu').forEach(function (menu) { 
+        menu.classList.remove('dropdown-active');
+    });
+}
+
+// close the dropdown on mouse out from the dropdown list
+document.querySelectorAll('.dropdown-menu').forEach(function (dropDownList) { 
+    // close the dropdown after user leave the list
+    dropDownList.onmouseleave = closeDropdown;
 });
