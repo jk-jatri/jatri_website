@@ -55,7 +55,7 @@
   .dropdown-toggle::before {
     content: "";
     position: absolute;
-    right: 20px;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
     border: 5px solid;
@@ -73,7 +73,8 @@
   .dropdown-menu::before {
     z-index: -1;
     transform: rotate(-135deg);
-    top: -4px;
+    top: -3px;
+    right: 56px;
     border-color: #ffffff;
     box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 0.4);
   }
