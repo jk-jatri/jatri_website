@@ -1,4 +1,4 @@
-/* ============== Mobile Potrait ============== */
+/* ============== Mobile Portrait ============== */
 
 @media only screen and (max-width: 575px) {
     .font_A {
@@ -491,7 +491,7 @@
         padding: 0 35px 0 0 !important;
     }
     .application_image {
-        width: 75%;
+        width: 50%;
     }
     .demo_view_more {
         font-size: 13px;
@@ -574,7 +574,7 @@
         padding: 0 35px 0 0 !important;
     }
     .application_image {
-        width: 75%;
+        width: 50%;
     }
     .demo_view_more {
         font-size: 13px;
