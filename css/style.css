@@ -922,3 +922,62 @@ button:not(:disabled) {
 .bold_list{
     font-weight: bold;
 }
+
+/* Ride sharing page design */
+.common_head{
+    font-weight: bold; 
+    margin: 20px 0;
+    text-align: center; 
+    text-decoration: underline;
+}
+.common_text_color{
+    color: #444;
+}
+.common_sub_head{
+    color: #666;
+}
+
+.common_ride_paragraph{
+    color: #999;
+    line-height: 11px;
+}
+.ride_rules_btn{
+    border: 0px;
+    padding: 12px 20px;
+    -webkit-box-shadow: inset 0 -2px 0 rgb(0 0 0 / 25%);
+    box-shadow: inset 0 -2px 0 rgb(0 0 0 / 25%);
+    background-color: #FF6347;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.ride_rules_btn:hover{
+    transition:0.4s;
+    color: #fff;
+    background-color: #666666;
+    border-color: #666666;
+}
+
+.ride_share_tble_head thead tr th,
+.ride_share_tbl tr:hover td{
+    background-color: #ff6347;
+    color: #fff;
+}
+.video_container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .responsive_iframe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
